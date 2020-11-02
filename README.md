@@ -6,7 +6,7 @@ It pulls the data from the [Meeting Place API](https://meetingplace.io/api/v1/gr
 
 ## Sample Output
 
-<img width="691" alt="image" src="https://user-images.githubusercontent.com/325384/97817355-cf61de80-1c93-11eb-92fc-9ced0077c220.png">
+![image](https://user-images.githubusercontent.com/325384/97884868-81de8380-1d1e-11eb-9a6f-0a6f9f2d1b7e.png)
 
 ```
 📅 *Next Event:* Virtual Coffee - Morning Crowd
