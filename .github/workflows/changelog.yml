@@ -2,6 +2,8 @@ name: Changelog
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
   changelog:
