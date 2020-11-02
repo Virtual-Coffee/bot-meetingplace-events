@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Updating preview image in readme to be correct bot [\#4](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/4) ([MikeRogers0](https://github.com/MikeRogers0))
 - Allowing this weeks events to be triggered manually [\#3](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/3) ([MikeRogers0](https://github.com/MikeRogers0))
 - Updating changing generator to use main branch [\#2](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/2) ([MikeRogers0](https://github.com/MikeRogers0))
 - Bump rspec from 3.9.0 to 3.10.0 [\#1](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/1) ([dependabot[bot]](https://github.com/apps/dependabot))
