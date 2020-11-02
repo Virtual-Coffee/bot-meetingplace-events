@@ -1,0 +1,53 @@
+require 'slack-ruby-bot'
+require 'dotiw'
+
+# Creates a standup message to be run every Monday morning to report all the events for that week
+module VirtualCoffeeBot
+  module Reports
+    class ThisWeeksEvents
+      include DOTIW::Methods
+
+      def call
+        return unless upcoming_events.any?
+
+        slack_client.chat_postMessage(channel: channel, text: text, as_user: true)
+      end
+
+      private
+
+      def text
+        [
+          '📆 *This Weeks Events Are:*',
+          upcoming_as_text
+        ].join("\n\n")
+      end
+
+      def upcoming_as_text
+        upcoming_events.collect do |event|
+          "• #{event.name} | #{event.formated_start_time} | <#{event.url}|View Details>"
+        end.join("\n")
+      end
+
+      def upcoming_events
+        @upcoming_events ||= all_events
+                             .select { |event| this_week_date_range.cover?(event.start_time) }
+      end
+
+      def this_week_date_range
+        (Time.now.utc.beginning_of_week..(Time.now.utc.end_of_week))
+      end
+
+      def all_events
+        @all_events ||= MeetingPlace::Events.new('virtual-coffee').call
+      end
+
+      def channel
+        ENV['SLACK_CHANNEL'] ||= '#general'
+      end
+
+      def slack_client
+        @slack_client ||= Slack::Web::Client.new(token: ENV['SLACK_API_TOKEN'])
+      end
+    end
+  end
+end

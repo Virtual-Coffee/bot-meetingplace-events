@@ -1,0 +1,11 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  Exclude:
+    - 'spec/fixtures/**/*'
+    - 'tmp/**/*'
+  TargetRubyVersion: 2.7
+  NewCops: enable
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never

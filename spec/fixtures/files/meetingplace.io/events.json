@@ -1,0 +1,22 @@
+[
+  {
+    "id": 3185,
+    "url": "https://meetingplace.io/virtual-coffee/events/3185",
+    "name": "Virtual Coffee - Morning Crowd",
+    "description": "",
+    "location": "Online Event",
+    "location_info": "[Shown to members only]",
+    "start_time": "2020-11-03T09:00:00-05:00",
+    "end_time": "2020-11-03T10:00:00-05:00"
+  },
+  {
+    "id": 4010,
+    "url": "https://meetingplace.io/virtual-coffee/events/4010",
+    "name": "brownbag: starting a start-up",
+    "description": "<div>hosted by Bryan</div>",
+    "location": "Online Event",
+    "location_info": "[Shown to members only]",
+    "start_time": "2020-11-04T12:00:00-05:00",
+    "end_time": "2020-11-04T13:00:00-05:00"
+  }
+]
