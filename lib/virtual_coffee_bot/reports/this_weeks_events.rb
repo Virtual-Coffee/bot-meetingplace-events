@@ -42,7 +42,7 @@ module VirtualCoffeeBot
       end
 
       def channel
-        ENV['SLACK_CHANNEL'] ||= '#general'
+        ENV['SLACK_CHANNEL'] ||= '#announcements'
       end
 
       def slack_client
