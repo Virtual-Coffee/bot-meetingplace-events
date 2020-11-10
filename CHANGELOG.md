@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Making github actions version number less specific [\#11](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/11) ([MikeRogers0](https://github.com/MikeRogers0))
 - Bump webmock from 3.9.4 to 3.9.5 [\#10](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/10) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump webmock from 3.9.3 to 3.9.4 [\#8](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/8) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Use \#announcements instead of \#general [\#5](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/5) ([danieltott](https://github.com/danieltott))
