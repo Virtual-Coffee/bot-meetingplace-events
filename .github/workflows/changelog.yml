@@ -14,11 +14,11 @@ jobs:
     - uses: actions/checkout@master
       with:
         ref: 'main'
-    - name: Set up Ruby 2.6
-      uses: actions/setup-ruby@v1
+    - name: Set up Ruby 2.7
+      uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.6.x
-    - uses: actions/cache@v2.1.2
+        ruby-version: 2.7
+    - uses: actions/cache@v2
       with:
         path: vendor/bundle
         key: ${{ runner.os }}-changelog-${{ hashFiles('**/Gemfile.lock') }}
