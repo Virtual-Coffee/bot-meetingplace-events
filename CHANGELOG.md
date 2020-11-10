@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Bump webmock from 3.9.4 to 3.9.5 [\#10](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/10) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump webmock from 3.9.3 to 3.9.4 [\#8](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/8) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Use \#announcements instead of \#general [\#5](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/5) ([danieltott](https://github.com/danieltott))
 - Updating preview image in readme to be correct bot [\#4](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/4) ([MikeRogers0](https://github.com/MikeRogers0))
