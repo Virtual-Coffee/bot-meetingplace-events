@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@octokit/core": "^3.2.1",
+    "@slack/web-api": "^5.14.0"
+  }
+}
