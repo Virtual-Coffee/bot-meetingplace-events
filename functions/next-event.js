@@ -24,6 +24,6 @@ exports.handler = async function(event, context) {
 
   return {
     statusCode: 200,
-    body: JSON.stringify(event.body)
+    body: "*Next Event:* Virtual Coffee - Morning Crowd | Tuesday 1st @ 09:00 AM (-0500) | <https://meetingplace.io/virtual-coffee/events/3189|View Details>"
   };
 }
