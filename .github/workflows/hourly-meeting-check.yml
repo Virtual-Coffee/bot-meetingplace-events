@@ -2,7 +2,7 @@ name: Hourly Events Check
 
 on:
   schedule:
-    - cron:  '50 * * * *'
+    - cron:  '45 * * * *'
 
 jobs:
   hourly_events_check:
