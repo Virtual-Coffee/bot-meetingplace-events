@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Pushing back reminders by 5 minutes [\#13](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/13) ([MikeRogers0](https://github.com/MikeRogers0))
 - Bump webmock from 3.9.5 to 3.10.0 [\#12](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/12) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Making github actions version number less specific [\#11](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/11) ([MikeRogers0](https://github.com/MikeRogers0))
 - Bump webmock from 3.9.4 to 3.9.5 [\#10](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/10) ([dependabot[bot]](https://github.com/apps/dependabot))
