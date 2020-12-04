@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Run the hourly meeting check at Half Past [\#17](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/17) ([MikeRogers0](https://github.com/MikeRogers0))
 - Bump zeitwerk from 2.4.1 to 2.4.2 [\#15](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/15) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump simplecov from 0.19.1 to 0.20.0 [\#14](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/14) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Pushing back reminders by 5 minutes [\#13](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/13) ([MikeRogers0](https://github.com/MikeRogers0))
