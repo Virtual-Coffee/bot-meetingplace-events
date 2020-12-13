@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Bump activesupport from 6.0.3.4 to 6.1.0 [\#19](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/19) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump slack-ruby-bot from 0.16.0 to 0.16.1 [\#18](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/18) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Run the hourly meeting check at Half Past [\#17](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/17) ([MikeRogers0](https://github.com/MikeRogers0))
 - Bump zeitwerk from 2.4.1 to 2.4.2 [\#15](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/15) ([dependabot[bot]](https://github.com/apps/dependabot))
