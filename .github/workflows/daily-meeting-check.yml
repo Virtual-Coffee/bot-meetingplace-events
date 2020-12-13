@@ -1,8 +1,9 @@
-name: Hourly Events Check
+name: Daily Events Check
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron:  '30 * * * *'
+    - cron:  '0 8 * * TUE,WED,THU,FRI,SAT,SUN'
 
 jobs:
   hourly_events_check:
@@ -31,4 +32,4 @@ jobs:
       env:
         SLACK_CHANNEL: "#announcements"
         SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
-      run: bundle exec rake virtual_coffee_bot:next_event
+      run: bundle exec rake virtual_coffee_bot:todays_events

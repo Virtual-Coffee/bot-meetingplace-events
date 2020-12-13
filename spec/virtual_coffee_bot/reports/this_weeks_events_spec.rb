@@ -32,7 +32,7 @@ describe VirtualCoffeeBot::Reports::ThisWeeksEvents do
       end
     end
 
-    it 'When called 1 week after the event, does not posts a notice' do
+    it 'When called 2 weeks after the event, does not posts a notice' do
       Timecop.travel(start_of_week + 2.weeks) do
         expect(slack_client).to_not receive(:chat_postMessage)
         expect { subject }.to_not raise_error
