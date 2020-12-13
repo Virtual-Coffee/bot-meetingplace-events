@@ -1,6 +1,7 @@
 name: RuboCop
 
 on:
+  pull_request:
   push:
     branches-ignore:
       - main
