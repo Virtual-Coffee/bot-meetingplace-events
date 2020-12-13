@@ -6,6 +6,11 @@
 
 **Merged pull requests:**
 
+- Bump slack-ruby-bot from 0.16.0 to 0.16.1 [\#18](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/18) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Run the hourly meeting check at Half Past [\#17](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/17) ([MikeRogers0](https://github.com/MikeRogers0))
+- Bump zeitwerk from 2.4.1 to 2.4.2 [\#15](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/15) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump simplecov from 0.19.1 to 0.20.0 [\#14](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/14) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Pushing back reminders by 5 minutes [\#13](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/13) ([MikeRogers0](https://github.com/MikeRogers0))
 - Bump webmock from 3.9.5 to 3.10.0 [\#12](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/12) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Making github actions version number less specific [\#11](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/11) ([MikeRogers0](https://github.com/MikeRogers0))
 - Bump webmock from 3.9.4 to 3.9.5 [\#10](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/10) ([dependabot[bot]](https://github.com/apps/dependabot))
