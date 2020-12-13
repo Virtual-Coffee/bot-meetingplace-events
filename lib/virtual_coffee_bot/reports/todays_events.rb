@@ -1,4 +1,4 @@
-# Creates a message summarising the 
+# Creates a message summarising the
 module VirtualCoffeeBot
   module Reports
     class TodaysEvents < ThisWeeksEvents
@@ -6,7 +6,7 @@ module VirtualCoffeeBot
 
       def text
         [
-          "📆 *Todays Events Are:*",
+          '📆 *Todays Events Are:*',
           upcoming_as_text
         ].join("\n\n")
       end
