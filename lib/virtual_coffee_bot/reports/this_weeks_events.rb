@@ -30,10 +30,10 @@ module VirtualCoffeeBot
 
       def upcoming_events
         @upcoming_events ||= all_events
-                             .select { |event| this_week_date_range.cover?(event.start_time) }
+                             .select { |event| date_range.cover?(event.start_time) }
       end
 
-      def this_week_date_range
+      def date_range
         (Time.now.utc.beginning_of_week..(Time.now.utc.end_of_week))
       end
 
