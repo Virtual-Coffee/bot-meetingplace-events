@@ -1,8 +1,8 @@
 require 'rubygems'
-Bundler.require :default, (ENV['RACK_ENV'] || 'development').to_sym
-
 require 'bundler'
+Bundler.require :default, (ENV['RACK_ENV'] || 'development').to_sym
 Bundler.setup
+
 require 'zeitwerk'
 require 'active_support/core_ext'
 
