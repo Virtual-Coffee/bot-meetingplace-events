@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Fix: NameError: undefined method `xmlschema' for class `Time' [\#23](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/23) ([MikeRogers0](https://github.com/MikeRogers0))
 - Enabling RSpec & Rubocop flows on PRs [\#22](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/22) ([MikeRogers0](https://github.com/MikeRogers0))
 - Adding morning summary notification [\#21](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/21) ([MikeRogers0](https://github.com/MikeRogers0))
 - Bump activesupport from 6.0.3.4 to 6.1.0 [\#19](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/19) ([dependabot[bot]](https://github.com/apps/dependabot))
