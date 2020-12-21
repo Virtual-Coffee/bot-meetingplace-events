@@ -81,18 +81,18 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activesupport!
-  dotenv!
-  dotiw!
-  rack-test!
-  rake!
-  rspec!
-  simplecov!
-  slack-ruby-bot!
-  timecop!
-  vcr!
-  webmock!
-  zeitwerk!
+  activesupport
+  dotenv
+  dotiw
+  rack-test
+  rake
+  rspec
+  simplecov
+  slack-ruby-bot
+  timecop
+  vcr
+  webmock
+  zeitwerk
 
 RUBY VERSION
    ruby 2.7.2p137

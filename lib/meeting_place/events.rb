@@ -1,4 +1,6 @@
 # Used to pull all the events from MeetingPlace.
+require 'net/http'
+
 module MeetingPlace
   class Events
     def initialize(group)
