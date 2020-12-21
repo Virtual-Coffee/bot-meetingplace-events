@@ -23,7 +23,7 @@ jobs:
       uses: actions/cache@v2
       with:
         path: vendor/bundle
-        key: ${{ runner.os }}-ruby-${{ matrix.ruby }}-${{ hashFiles('**/Gemfile.lock') }}
+        key: ${{ runner.os }}-rspec-${{ matrix.ruby }}-${{ hashFiles('**/Gemfile.lock') }}
     - name: Install Gems
       env:
         RAILS_ENV: test
