@@ -1,10 +1,9 @@
 require 'rubygems'
 require 'bundler'
-Bundler.require :default, (ENV['RACK_ENV'] || 'development').to_sym
-Bundler.setup
+require 'bundler/setup'
 
+require 'active_support/core_ext/time'
 require 'zeitwerk'
-require 'active_support/core_ext'
 
 loader = Zeitwerk::Loader.new
 loader.push_dir(__dir__)

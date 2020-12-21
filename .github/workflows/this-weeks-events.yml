@@ -11,23 +11,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Ruby 2.7
+    - name: Set up Ruby 2.7.2
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.7
+        ruby-version: 2.7.2
     - name: Cache gems
       uses: actions/cache@v2
       with:
         path: vendor/bundle
         key: ${{ runner.os }}-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-
     - name: Install gems
       run: |
         bundle config path vendor/bundle
-        gem install bundler
-        bundle config path vendor/bundle
-        bundle install --jobs 4 --retry 3
+        bundle install --jobs 4 --retry 3 --without development test
     - name: Run Report
       env:
         SLACK_CHANNEL: "#announcements"
