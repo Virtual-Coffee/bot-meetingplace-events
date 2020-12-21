@@ -6,6 +6,8 @@
 
 **Merged pull requests:**
 
+- Bump rake from 13.0.1 to 13.0.3 [\#25](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/25) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump webmock from 3.10.0 to 3.11.0 [\#24](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/24) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Fix: NameError: undefined method `xmlschema' for class `Time' [\#23](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/23) ([MikeRogers0](https://github.com/MikeRogers0))
 - Enabling RSpec & Rubocop flows on PRs [\#22](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/22) ([MikeRogers0](https://github.com/MikeRogers0))
 - Adding morning summary notification [\#21](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/21) ([MikeRogers0](https://github.com/MikeRogers0))
