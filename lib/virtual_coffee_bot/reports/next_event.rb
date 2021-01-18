@@ -1,4 +1,4 @@
-require 'slack-ruby-bot'
+require "slack-ruby-bot"
 
 # Ran every hour. Add a 10 minute warning that an event is about to start.
 module VirtualCoffeeBot
@@ -25,7 +25,7 @@ module VirtualCoffeeBot
 
       def upcoming_events
         @next_event ||= all_events
-                        .select { |event| event.starts_during_the_hour?(start_time_to_an_hours_precision) }
+          .select { |event| event.starts_during_the_hour?(start_time_to_an_hours_precision) }
       end
 
       def start_time_to_an_hours_precision
