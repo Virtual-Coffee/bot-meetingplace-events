@@ -37,6 +37,6 @@ Currently there are three scheduled tasks which run:
 
 | Rake Task                              | When it should be run                | Purpose                                               |
 | -------------------------------------- | ------------------------------------ | ----------------------------------------------------- |
-| `virtual_coffee_bot:next_event`        | Hourly ~10 minutes before the hour   | Gives a heads up that a new meeting is about to start |
+| `virtual_coffee_bot:next_event`        | Hourly ~15 minutes before the hour   | Gives a heads up that a new meeting is about to start |
 | `virtual_coffee_bot:todays_events`     | Every morning at 8am (Except Monday) | Tells us in the morning an event will happen that day |
 | `virtual_coffee_bot:this_weeks_events` | Every Monday at 8am UTC              | Lists all the meetings starting that week             |

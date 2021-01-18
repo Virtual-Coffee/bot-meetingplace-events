@@ -6,7 +6,16 @@ task :environment do
 end
 
 namespace :virtual_coffee_bot do
-  desc 'Posts to Slack if an event occouring today.'
+  desc 'Posts to Slack if an event is starting in the next 15 minutes'
+  task next_event: :environment do
+    if ENV['SLACK_API_TOKEN']
+      VirtualCoffeeBot::Reports::NextEvent.new.call
+    else
+      puts 'Missing required ENV: SLACK_API_TOKEN'
+    end
+  end
+
+  desc 'Posts to Slack if an event occouring today'
   task todays_events: :environment do
     if ENV['SLACK_API_TOKEN']
       VirtualCoffeeBot::Reports::TodaysEvents.new.call
