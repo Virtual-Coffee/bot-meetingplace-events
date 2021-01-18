@@ -8,6 +8,7 @@
 
 - Bump webmock from 3.11.0 to 3.11.1 [\#31](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/31) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump simplecov from 0.20.0 to 0.21.2 [\#30](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/30) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump activesupport from 6.1.0 to 6.1.1 [\#29](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/29) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Attemping to fix the undefined method `xmlschema' for class `Time'` [\#26](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/26) ([MikeRogers0](https://github.com/MikeRogers0))
 - Bump rake from 13.0.1 to 13.0.3 [\#25](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/25) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump webmock from 3.10.0 to 3.11.0 [\#24](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/24) ([dependabot[bot]](https://github.com/apps/dependabot))
