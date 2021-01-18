@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Removing dependabot [\#32](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/32) ([MikeRogers0](https://github.com/MikeRogers0))
 - Bump webmock from 3.11.0 to 3.11.1 [\#31](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/31) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump simplecov from 0.20.0 to 0.21.2 [\#30](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/30) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump activesupport from 6.1.0 to 6.1.1 [\#29](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/29) ([dependabot[bot]](https://github.com/apps/dependabot))
