@@ -1,4 +1,4 @@
-require 'dotiw'
+require "dotiw"
 
 # Represents an event on MeetingPlace
 # Has common methods I wanted to format
@@ -15,7 +15,7 @@ module MeetingPlace
     end
 
     def start_time
-      @start_time ||= Time.parse(@data['start_time'])
+      @start_time ||= Time.parse(@data["start_time"])
     end
 
     def time_to_start
@@ -23,11 +23,11 @@ module MeetingPlace
     end
 
     def name
-      @data['name']
+      @data["name"]
     end
 
     def url
-      @data['url']
+      @data["url"]
     end
 
     def starts_during_the_hour?(hour)

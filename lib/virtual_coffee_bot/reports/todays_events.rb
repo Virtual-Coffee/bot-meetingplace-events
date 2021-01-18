@@ -6,14 +6,14 @@ module VirtualCoffeeBot
 
       def text
         [
-          '📆 *Todays Events Are:*',
+          "📆 *Todays Events Are:*",
           upcoming_as_text
         ].join("\n\n")
       end
 
       def upcoming_events
         @upcoming_events ||= all_events
-                             .select { |event| date_range.cover?(event.start_time) }
+          .select { |event| date_range.cover?(event.start_time) }
       end
 
       def date_range
