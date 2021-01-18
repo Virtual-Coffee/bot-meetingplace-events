@@ -1,0 +1,40 @@
+{
+  "name": "Virtual Coffee Bot",
+  "description": "Posts a slack notification when events are about to occur",
+  "repository": "https://github.com/Virtual-Coffee/Virtual-Coffee-Bot",
+  "keywords": ["slack", "bot"],
+  "scripts": {
+  },
+  "env": {
+    "RACK_ENV": {
+      "required": true,
+      "value": "production"
+    },
+    "SLACK_API_TOKEN": {
+      "description": "Slack API Token - for your bot to talk to slack.",
+      "required": true
+    },
+    "SLACK_CHANNEL": {
+      "description": "The channel for the bot to post to in Slack.",
+      "value": "#announcements",
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 0
+    },
+    "worker": {
+      "quantity": 0
+    }
+  },
+  "addons": [
+    "scheduler",
+    "papertrail"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
