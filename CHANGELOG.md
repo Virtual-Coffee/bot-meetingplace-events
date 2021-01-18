@@ -7,6 +7,7 @@
 **Merged pull requests:**
 
 - Switching to standardrb for Ruby Linting [\#35](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/35) ([MikeRogers0](https://github.com/MikeRogers0))
+- Use Heroku over GitHub Actions for Scheduled Events [\#34](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/34) ([MikeRogers0](https://github.com/MikeRogers0))
 - Tidying GitHub Actions to run on push \(and run faster\) [\#33](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/33) ([MikeRogers0](https://github.com/MikeRogers0))
 - Removing dependabot [\#32](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/32) ([MikeRogers0](https://github.com/MikeRogers0))
 - Bump webmock from 3.11.0 to 3.11.1 [\#31](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/31) ([dependabot[bot]](https://github.com/apps/dependabot))
