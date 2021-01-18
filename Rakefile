@@ -15,8 +15,10 @@ namespace :virtual_coffee_bot do
     end
   end
 
-  desc "Posts to Slack if an event occouring today"
+  desc "Posts to Slack if an event occouring today (Does not run on Monday)"
   task todays_events: :environment do
+    return if Time.now.monday?
+
     if ENV["SLACK_API_TOKEN"]
       VirtualCoffeeBot::Reports::TodaysEvents.new.call
     else
@@ -24,8 +26,10 @@ namespace :virtual_coffee_bot do
     end
   end
 
-  desc "Posts to Slack the events for this week"
+  desc "Posts to Slack the events for this week (Only runs on Monday)"
   task this_weeks_events: :environment do
+    return unless Time.now.monday?
+
     if ENV["SLACK_API_TOKEN"]
       VirtualCoffeeBot::Reports::ThisWeeksEvents.new.call
     else
