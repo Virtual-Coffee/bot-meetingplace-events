@@ -1,8 +1,8 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 task :environment do
-  require 'dotenv/load'
-  require 'lib/virtual_coffee_bot'
+  require "dotenv/load"
+  require "lib/virtual_coffee_bot"
 end
 
 namespace :virtual_coffee_bot do
@@ -17,19 +17,19 @@ namespace :virtual_coffee_bot do
 
   desc 'Posts to Slack if an event occouring today'
   task todays_events: :environment do
-    if ENV['SLACK_API_TOKEN']
+    if ENV["SLACK_API_TOKEN"]
       VirtualCoffeeBot::Reports::TodaysEvents.new.call
     else
-      puts 'Missing required ENV: SLACK_API_TOKEN'
+      puts "Missing required ENV: SLACK_API_TOKEN"
     end
   end
 
-  desc 'Posts to Slack the events for this week'
+  desc "Posts to Slack the events for this week"
   task this_weeks_events: :environment do
-    if ENV['SLACK_API_TOKEN']
+    if ENV["SLACK_API_TOKEN"]
       VirtualCoffeeBot::Reports::ThisWeeksEvents.new.call
     else
-      puts 'Missing required ENV: SLACK_API_TOKEN'
+      puts "Missing required ENV: SLACK_API_TOKEN"
     end
   end
 end

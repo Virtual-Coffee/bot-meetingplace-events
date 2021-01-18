@@ -1,4 +1,4 @@
-name: RuboCop
+name: Standard (Ruby Linter)
 
 on:
   push:
@@ -19,10 +19,10 @@ jobs:
       uses: actions/cache@v2
       with:
         path: vendor/bundle
-        key: ${{ runner.os }}-rubocop-${{ hashFiles('**/Gemfile.lock') }}
+        key: ${{ runner.os }}-standardrb
     - name: Install gems
       run: |
         bundle config path vendor/bundle
-        gem install rubocop
-    - name: Run RuboCop
-      run: rubocop --parallel
+        gem install standardrb
+    - name: Run standard
+      run: standardrb
