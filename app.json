@@ -29,7 +29,8 @@
     }
   },
   "addons": [
-    "scheduler"
+    "scheduler",
+    "papertrail"
   ],
   "buildpacks": [
     {
