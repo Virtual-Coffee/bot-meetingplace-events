@@ -7,7 +7,7 @@ describe MeetingPlace::Event do
   describe "#slack_markdown_start_time" do
     subject { instance.slack_markdown_start_time }
 
-    it { is_expected.to eq "<!date^1604412000^{date_short_pretty} @ {time}^https://meetingplace.io/virtual-coffee/events/3185|Tuesday 3rd @ 09:00 AM (-0500)>" }
+    it { is_expected.to eq "<!date^1604412000^{date_long_pretty} @ {time}^https://meetingplace.io/virtual-coffee/events/3185|Tuesday 3rd @ 09:00 AM (-0500)>" }
   end
 
   describe "#time_to_start" do
