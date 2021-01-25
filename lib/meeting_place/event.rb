@@ -10,7 +10,7 @@ module MeetingPlace
       @data = data
     end
 
-    def formated_start_time
+    def slack_markdown_start_time
       fallback_text = start_time.strftime("%A #{start_time.day.ordinalize} @ %H:%M %p (%z)")
 
       "<!date^#{start_time.to_i}^{date_short_pretty} @ {time}^#{url}|#{fallback_text}>"

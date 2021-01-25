@@ -36,7 +36,7 @@ module VirtualCoffeeBot
 
       def upcoming_as_text
         upcoming_events.collect { |event|
-          "• #{event.name} | #{event.formated_start_time} | <#{event.url}|View Details>"
+          "• #{event.name} | #{event.slack_markdown_start_time}"
         }.join("\n")
       end
 
