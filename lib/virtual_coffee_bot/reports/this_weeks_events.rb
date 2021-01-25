@@ -10,10 +10,22 @@ module VirtualCoffeeBot
       def call
         return unless upcoming_events.any?
 
-        slack_client.chat_postMessage(channel: channel, text: text, as_user: true)
+        slack_client.chat_postMessage(channel: channel, blocks: blocks, as_user: true)
       end
 
       private
+
+      def blocks
+        [
+          {
+            "type": "section",
+            "text": {
+              "type": "mrkdwn",
+              "text": text
+            }
+          }
+        ]
+      end
 
       def text
         [
@@ -24,7 +36,7 @@ module VirtualCoffeeBot
 
       def upcoming_as_text
         upcoming_events.collect { |event|
-          "• #{event.name} | #{event.formated_start_time} | <#{event.url}|View Details>"
+          "• #{event.name} | #{event.slack_markdown_start_time}"
         }.join("\n")
       end
 
