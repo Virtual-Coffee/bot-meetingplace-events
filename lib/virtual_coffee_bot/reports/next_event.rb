@@ -4,12 +4,6 @@ require "slack-ruby-bot"
 module VirtualCoffeeBot
   module Reports
     class NextEvent < ThisWeeksEvents
-      def call
-        return unless next_event.present?
-
-        slack_client.chat_postMessage(channel: channel, text: text, as_user: true)
-      end
-
       private
 
       def text
