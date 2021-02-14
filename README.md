@@ -67,21 +67,21 @@ Set up an "Incoming WebHook" on Slack and connect it to a channel.
 
 > :pencil: It might be a good idea to set up a testing channel just for this integration
 
-Grab the _"webhook url"_.  It should look something like this: https://hooks.slack.com/services/T0..LN/B0..VV1/br..dd
-
 ### Set up the heroku configuration
 
 The following secrets should be set in the heroku config
-
-heroku config:set WEBHOOK_URL=https://hooks.slack.com/services/T0..LN/B0..VV1/br..dd
-
-It requires the following:
 
 | Secret               | Source                                                     | Purpose                                              |
 | -------------------- | ---------------------------------------------------------- | ---------------------------------------------------- |
 | `SLACK_API_TOKEN`    | [Bot User OAuth Access Token](https://api.slack.com/apps/) | This allows us to post as a bot to slack             |
 | `SLACK_CHANNEL`      |                                                            | This allows the bot to chat in the specified channel |
 | `MEETINGPLACE_GROUP` | [Meetingplace group url](https//meetingplace.io/api)       | This tells the bot what group to post events from    |
+
+You can set these from the command line with:
+
+```
+heroku config:set SECRET=value
+```
 
 ### Slack Bot Token Scopes
 
@@ -95,10 +95,28 @@ The following scopes need to be added to your Slack Bot to allow it to post mess
 
 ## Scheduled Messages
 
+Set up heroku scheduler.
+
 Currently there are three scheduled tasks which run:
 
 | Rake Task                              | When it should be run                | Purpose                                               | Crontab      |
 | -------------------------------------- | ------------------------------------ | ----------------------------------------------------- | ------------ |
-| `virtual_coffee_bot:next_event`        | Hourly ~15 minutes before the hour   | Gives a heads up that a new meeting is about to start | `45 * * * *` |
-| `virtual_coffee_bot:todays_events`     | Every morning at 8am (Except Monday) | Tells us in the morning an event will happen that day | `0 8 * * *`  |
-| `virtual_coffee_bot:this_weeks_events` | Every Monday at 8am UTC              | Lists all the meetings starting that week             | `0 8 * * *`  |
+| `meetingplace_slack_bot:next_event`        | Hourly ~15 minutes before the hour   | Gives a heads up that a new meeting is about to start | `45 * * * *` |
+| `meetingplace_slack_bot:todays_events`     | Every morning at 8am (Except Monday) | Tells us in the morning an event will happen that day | `0 8 * * *`  |
+| `meetingplace_slack_bot:this_weeks_events` | Every Monday at 8am UTC              | Lists all the meetings starting that week             | `0 8 * * *`  |
+
+
+### Run locally
+
+To run locally, create a `.env` file in the root of this directory with the environment keys listed in [1](#setup-the-heroku-configuration)
+
+Then you can run the rake tasks
+
+
+```bash
+bundle exec rake meetingplace_slack_bot:next_event
+bundle exec rake meetingplace_slack_bot:todays_events
+bundle exec rake meetingplace_slack_bot:this_weeks_events
+
+```
+

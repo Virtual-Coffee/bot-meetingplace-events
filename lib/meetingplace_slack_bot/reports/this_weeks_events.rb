@@ -54,7 +54,7 @@ module MeetingplaceSlackBot
       end
 
       def channel
-        ENV["SLACK_CHANNEL"] ||= "#announcements"
+        ENV["SLACK_CHANNEL"] ||= "#general"
       end
 
       def slack_client
