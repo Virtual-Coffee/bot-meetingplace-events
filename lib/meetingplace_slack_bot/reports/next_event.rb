@@ -1,7 +1,7 @@
 require "slack-ruby-bot"
 
 # Ran every hour. Add a 10 minute warning that an event is about to start.
-module VirtualCoffeeBot
+module MeetingplaceSlackBot
   module Reports
     class NextEvent < ThisWeeksEvents
       private

@@ -2,7 +2,7 @@ require "slack-ruby-bot"
 require "dotiw"
 
 # Creates a standup message to be run every Monday morning to report all the events for that week
-module VirtualCoffeeBot
+module MeetingplaceSlackBot
   module Reports
     class ThisWeeksEvents
       include DOTIW::Methods
@@ -50,7 +50,7 @@ module VirtualCoffeeBot
       end
 
       def all_events
-        @all_events ||= MeetingPlace::Events.new("virtual-coffee").call
+        @all_events ||= MeetingPlace::Events.new(ENV["MEETINGPLACE_GROUP"]).call
       end
 
       def channel

@@ -1,5 +1,5 @@
 # Creates a message summarising the
-module VirtualCoffeeBot
+module MeetingplaceSlackBot
   module Reports
     class TodaysEvents < ThisWeeksEvents
       private
