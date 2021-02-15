@@ -40,7 +40,8 @@ namespace :virtual_coffee_bot do
   desc "Asks if anyone is around for Coffee Meet"
   task who_is_around: :environment do
     if ENV["SLACK_API_TOKEN"]
-      VirtualCoffeeBot::Management::WhoIsAroundForCoffee.new.call
+      #VirtualCoffeeBot::Management::WhoIsAroundForCoffee.new.call
+      VirtualCoffeeBot::Management::WhoIsAroundForCoffee.new.get_users_doing_stuff
     end
   end
 end

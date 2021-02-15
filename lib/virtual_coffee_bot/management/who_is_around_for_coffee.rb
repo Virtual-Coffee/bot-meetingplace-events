@@ -8,10 +8,42 @@ module VirtualCoffeeBot
       include DOTIW::Methods
 
       def call
-        slack_client.chat_postMessage(channel: channel, blocks: blocks, as_user: true)
+        puts slack_client.chat_postMessage(channel: channel, blocks: blocks, as_user: true).inspect
+      end
+
+      def get_users_doing_stuff
+        puts slack_client.conversations_history(channel: '#general', sort: 'timestamp').messages.first.bot_profile.name.inspect
+        puts slack_client.conversations_history(channel: '#general', sort: 'timestamp').messages.first.reactions.inspect
+
+        puts slack_client.chat_postMessage(channel: channel, blocks: response_blocks, as_user: true).inspect
       end
 
       private
+
+      def response_blocks
+        [
+          {
+            "type": "section",
+            "text": {
+              "type": "mrkdwn",
+              "text": response_text
+            }
+          }
+        ]
+      end
+
+      def response_text
+        [
+          "*Tuesday:*",
+          "Who's going to be there and is up for room lead or note-taking?",
+          "*MC:* <@UK3G0UE8K>",
+          "*Host:* <@UK3G0UE8K>",
+          "*Room Leader* ------ *Notetaker*",
+          "<@UK3G0UE8K> ----- <@UK3G0UE8K>",
+          "*Ice-breaker:* What is your favourite binary",
+          "Backpocket topic: "
+        ].join("\n")
+      end
 
       def blocks
         [
@@ -24,7 +56,6 @@ module VirtualCoffeeBot
           }
         ]
       end
-
 
       def text
         [
