@@ -59,7 +59,7 @@ heroku logs --tail
 
 ### Set up slack
 
-First, visit slack.com/apps/build and select "Make a Custom Integration".
+First, visit https://slack.com/apps/build and select "Create a custom app".
 
 Set up an "Incoming WebHook" on Slack and connect it to a channel.
 

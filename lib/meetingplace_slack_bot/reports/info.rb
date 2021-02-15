@@ -26,17 +26,16 @@ module MeetingplaceSlackBot
       end
 
       def text
-        ["I am the Meetingplace Slack Bot!  I'll tell send you messages when there are upcoming events with <https://meetingplace.io/#{group_url}|#{group_url}> like:",
-          "📅 *Next Event:* Your event name",
-          "Starting in 10 minutes! | <https://meetingplace.io/#{group_url}|View Details>"].join("\n\n")
+        ["I am the Meetingplace Slack Bot!",
+          "I'll tell send you messages when there are upcoming events with <https://meetingplace.io/#{group_url}|#{group_url}>."].join("\n\n")
       end
 
       def channel
-        ENV["SLACK_CHANNEL"] ||= "#events"
+        ENV["SLACK_CHANNEL"] ||= "#general"
       end
 
       def group_url
-        ENV["MEETINGPLACE_GROUP"] ||= "women-in-robotics"
+        ENV["MEETINGPLACE_GROUP"] ||= "virtual-coffee"
       end
 
       def slack_client

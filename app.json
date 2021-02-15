@@ -16,7 +16,7 @@
     },
     "SLACK_CHANNEL": {
       "description": "The channel for the bot to post to in Slack.",
-      "value": "#announcements",
+      "value": "#general",
       "required": true
     },
     "MEETINGPLACE_GROUP": {
