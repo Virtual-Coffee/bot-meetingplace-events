@@ -61,18 +61,18 @@ heroku logs --tail
 
 First, visit https://slack.com/apps/build and select "Create a custom app".
 
-Set up an "Incoming WebHook" on Slack and connect it to a channel.
+Click on "permissions" -> "Add OAuth Scopes"
 
-> :pencil: It might be a good idea to set up a testing channel just for this integration
-
-<!--TODO find out if these scopes are actually needed or if webhook is enough -->
 The following scopes need to be added to your Slack Bot to allow it to post messages.
 
 | Scope               |
 | ------------------- |
 | `chat:write.public` |
-| `channels:read`     |
 | `chat:write`        |
+| `channels:read`     |
+
+
+> :pencil: It might be a good idea to set up a testing channel for this integration
 
 ### Environment configuration
 
@@ -122,11 +122,11 @@ Set up heroku scheduler.
 
 Currently there are three scheduled tasks which run:
 
-| Rake Task                                  | When it should be run                | Purpose                                               |
-| ------------------------------------------ | ------------------------------------ | ----------------------------------------------------- |
-| `meetingplace_slack_bot:next_event`        | Hourly ~10 minutes before the hour   | Gives a heads up that a new meeting is about to start |
+| Rake Task                                  | When it should be run                    | Purpose                                               |
+| ------------------------------------------ | ---------------------------------------- | ----------------------------------------------------- |
+| `meetingplace_slack_bot:next_event`        | Hourly ~10 minutes before the hour       | Gives a heads up that a new meeting is about to start |
 | `meetingplace_slack_bot:todays_events`     | Every morning at 8am UTC (Except Monday) | Tells us in the morning an event will happen that day |
-| `meetingplace_slack_bot:this_weeks_events` | Every Monday at 8am UTC              | Lists all the meetings starting that week             |
+| `meetingplace_slack_bot:this_weeks_events` | Every Monday at 8am UTC                  | Lists all the meetings starting that week             |
 
 
 If you deployed manually (not using the button) set up heroku with scheduler
