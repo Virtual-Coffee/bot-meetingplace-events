@@ -13,11 +13,13 @@ Starting in 10 minutes! <https://meetingplace.io/virtual-coffee/events/3185|View
 
 ## Setting up
 
+### Quickstart
+
 The bot runs on heroku.  The easiest way to deploy is to click on the button below to create the heroku app, set up your [slack integration](#set-up-slack), and then follow the directions to send [scheduled messages](#scheduled-messages)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-### Development
+### Manual setup
 Start the development environment in vscode
 
 Follow the [tutorial](https://blog.heroku.com/how-to-deploy-your-slack-bots-to-heroku) on deploying a slack bot to heroku.
@@ -47,14 +49,13 @@ Open the app in a browser
 ```
 heroku open
 ```
+> :pencil: This results in an `bundler: command not found: rackup` error.  We will not be running rackup, instead we will be setting up scheduler to run rake tasks.
 
 See the logs 
 
 ```
 heroku logs --tail
 ```
-
-> :pencil: This results in an `bundler: command not found: rackup` error
 
 ### Set up slack
 
@@ -121,11 +122,11 @@ Set up heroku scheduler.
 
 Currently there are three scheduled tasks which run:
 
-| Rake Task                                  | When it should be run                | Purpose                                               | Crontab      |
-| ------------------------------------------ | ------------------------------------ | ----------------------------------------------------- | ------------ |
-| `meetingplace_slack_bot:next_event`        | Hourly ~15 minutes before the hour   | Gives a heads up that a new meeting is about to start | `45 * * * *` |
-| `meetingplace_slack_bot:todays_events`     | Every morning at 8am (Except Monday) | Tells us in the morning an event will happen that day | `0 8 * * *`  |
-| `meetingplace_slack_bot:this_weeks_events` | Every Monday at 8am UTC              | Lists all the meetings starting that week             | `0 8 * * *`  |
+| Rake Task                                  | When it should be run                | Purpose                                               |
+| ------------------------------------------ | ------------------------------------ | ----------------------------------------------------- |
+| `meetingplace_slack_bot:next_event`        | Hourly ~10 minutes before the hour   | Gives a heads up that a new meeting is about to start |
+| `meetingplace_slack_bot:todays_events`     | Every morning at 8am UTC (Except Monday) | Tells us in the morning an event will happen that day |
+| `meetingplace_slack_bot:this_weeks_events` | Every Monday at 8am UTC              | Lists all the meetings starting that week             |
 
 
 If you deployed manually (not using the button) set up heroku with scheduler
@@ -133,6 +134,3 @@ If you deployed manually (not using the button) set up heroku with scheduler
 ```bash
 heroku addons:create scheduler:standard
 ```
-
-
-
