@@ -2,7 +2,6 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), ".."))
 
 ENV["RACK_ENV"] ||= "test"
 ENV["SLACK_API_TOKEN"] ||= "sample_slack_api_token"
-ENV["MEETINGPLACE_GROUP"] ||= "virtual-coffee"
 
 require "simplecov"
 SimpleCov.start
