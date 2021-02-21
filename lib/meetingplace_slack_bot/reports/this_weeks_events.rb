@@ -7,7 +7,9 @@ module MeetingplaceSlackBot
     class ThisWeeksEvents
       include DOTIW::Methods
 
-      def call
+      def call(slack_channel = nil, meetingplace_group = nil)
+        @channel = slack_channel
+        @group_url = meetingplace_group
         return unless upcoming_events.any?
 
         slack_client.chat_postMessage(channel: channel, blocks: blocks, as_user: true)
@@ -53,8 +55,12 @@ module MeetingplaceSlackBot
         @all_events ||= MeetingPlace::Events.new(ENV["MEETINGPLACE_GROUP"]).call
       end
 
+      def group_url
+        @group_url ||= ENV["MEETINGPLACE_GROUP"] ||= "virtual-coffee"
+      end
+
       def channel
-        ENV["SLACK_CHANNEL"] ||= "#general"
+        @channel ||= ENV["SLACK_CHANNEL"] ||= "#general"
       end
 
       def slack_client

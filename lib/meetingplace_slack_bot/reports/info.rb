@@ -7,7 +7,9 @@ module MeetingplaceSlackBot
     class Info
       include DOTIW::Methods
 
-      def call
+      def call(slack_channel = nil, meetingplace_group = nil)
+        @channel = slack_channel
+        @group_url = meetingplace_group
         slack_client.chat_postMessage(channel: channel, blocks: blocks, as_user: true)
       end
 
@@ -31,11 +33,11 @@ module MeetingplaceSlackBot
       end
 
       def channel
-        ENV["SLACK_CHANNEL"] ||= "#general"
+        @channel ||= ENV["SLACK_CHANNEL"] ||= "#general"
       end
 
       def group_url
-        ENV["MEETINGPLACE_GROUP"] ||= "virtual-coffee"
+        @group_url ||= ENV["MEETINGPLACE_GROUP"] ||= "virtual-coffee"
       end
 
       def slack_client
