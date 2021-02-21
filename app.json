@@ -16,12 +16,11 @@
     },
     "SLACK_CHANNEL": {
       "description": "The channel for the bot to post to in Slack.",
-      "value": "#general",
-      "required": true
+      "required": false
     },
     "MEETINGPLACE_GROUP": {
       "description": "The name of the meetingplace group.",
-      "required": true
+      "required": false
     }
   },
   "formation": {

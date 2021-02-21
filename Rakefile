@@ -42,7 +42,7 @@ namespace :meetingplace_slack_bot do
     if !ENV["SLACK_API_TOKEN"]
       puts "Missing required ENV: SLACK_API_TOKEN"
     else
-      MeetingplaceSlackBot::Reports::Info.new.call(args[:channel], args[:group])
+      MeetingplaceSlackBot::Reports::GroupInfo.new.call(args[:channel], args[:group])
     end
   end
 end

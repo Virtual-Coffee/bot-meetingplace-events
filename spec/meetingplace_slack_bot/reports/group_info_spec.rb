@@ -1,11 +1,14 @@
 require "spec_helper"
 
-describe MeetingplaceSlackBot::Reports::Info do
+describe MeetingplaceSlackBot::Reports::GroupInfo do
   let(:instance) { described_class.new }
   let(:slack_client) { double :slack_client }
+  let(:info) { MeetingPlace::Info.new("virtual-coffee") }
 
   before do
     allow(instance).to receive(:slack_client).and_return(slack_client)
+    allow(instance).to receive(:info).and_return(info)
+    info.instance_variable_set("@data", JSON.parse(File.read("spec/fixtures/files/meetingplace.io/info.json")))
   end
 
   describe "#call" do
