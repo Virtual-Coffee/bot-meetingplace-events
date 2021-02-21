@@ -8,8 +8,10 @@ module MeetingplaceSlackBot
 
       def text
         [
-          "📅 *Next Event:* #{next_event.name}",
-          "Starting in #{next_event.time_to_start} | <#{next_event.url}|View Details>"
+          "📅 Next event is starting in #{next_event.time_to_start}!",
+          "*#{next_event.name}*",
+          next_event.description.to_s,
+          "<#{next_event.url}|View Details>"
         ].join("\n\n")
       end
 
