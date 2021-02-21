@@ -11,15 +11,13 @@ This friendly bot sends a slack message for upcoming events. It pulls the data f
 Starting in 10 minutes! <https://meetingplace.io/virtual-coffee/events/3185|View Details>
 ```
 
-## Setting up
-
-### Quickstart
+## Quickstart
 
 The bot runs on heroku.  The easiest way to deploy is to click on the button below to create the heroku app, set up your [slack integration](#set-up-slack), and then follow the directions to send [scheduled messages](#scheduled-messages)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-### Manual setup
+## Manual setup
 Start the development environment in vscode
 
 Follow the [tutorial](https://blog.heroku.com/how-to-deploy-your-slack-bots-to-heroku) on deploying a slack bot to heroku.
@@ -78,11 +76,11 @@ The following scopes need to be added to your Slack Bot to allow it to post mess
 
 The following secrets should be set in environment variables
 
-| Secret               | Source                                                     | Purpose                                              |
-| -------------------- | ---------------------------------------------------------- | ---------------------------------------------------- |
-| `SLACK_API_TOKEN`    | [Bot User OAuth Access Token](https://api.slack.com/apps/) | This allows us to post as a bot to slack             |
-| `SLACK_CHANNEL`      |                                                            | This allows the bot to chat in the specified channel |
-| `MEETINGPLACE_GROUP` | [Meetingplace group url](https//meetingplace.io/api)       | This tells the bot what group to post events from    |
+| Secret               | Source                                                     | Purpose                                                   |
+| -------------------- | ---------------------------------------------------------- | --------------------------------------------------------- |
+| `SLACK_API_TOKEN`    | [Bot User OAuth Access Token](https://api.slack.com/apps/) | This allows us to post as a bot to slack                  |
+| `SLACK_CHANNEL`      |                                                            | This is the default channel for the bot                   |
+| `MEETINGPLACE_GROUP` | [Meetingplace group url](https//meetingplace.io/api)       | This is the default group for the bot to post events from |
 
 
 You can set these in heroku from the command line with:
@@ -114,23 +112,48 @@ heroku run rake meetingplace_slack_bot:todays_events
 heroku run rake meetingplace_slack_bot:this_weeks_events
 ```
 
+### Run options
+
+Each task has optional settings [channel, group_id] to let you set tasks for different channels and groups.
+
+example:
+
+```bash
+bundle exec rake meetingplace_slack_bot:info["test-channel","virtual-coffee"]
+```
+
 ## Scheduled Messages
 
 Set up heroku scheduler.
 
 > :pencil: You will need to provide your credit card info to set up the scheduler, but the usage should remain within the free limits.
 
-Currently there are three scheduled tasks which run:
-
-| Rake Task                                  | When it should be run                    | Purpose                                               |
-| ------------------------------------------ | ---------------------------------------- | ----------------------------------------------------- |
-| `meetingplace_slack_bot:next_event`        | Hourly ~10 minutes before the hour       | Gives a heads up that a new meeting is about to start |
-| `meetingplace_slack_bot:todays_events`     | Every morning at 8am UTC (Except Monday) | Tells us in the morning an event will happen that day |
-| `meetingplace_slack_bot:this_weeks_events` | Every Monday at 8am UTC                  | Lists all the meetings starting that week             |
-
-
 If you deployed manually (not using the button) set up heroku with scheduler
 
 ```bash
 heroku addons:create scheduler:standard
 ```
+
+To add a task to the scheduler, first open up the app within your heroku project
+
+![scheduler-1](https://user-images.githubusercontent.com/6098197/108635650-4edb0f80-7435-11eb-9a2b-c0f002f99902.png)
+
+Then select add job
+
+![scheduler-2](https://user-images.githubusercontent.com/6098197/108635655-569ab400-7435-11eb-9b72-3ee03e6630c1.png)
+
+Then setup the schedule for your task
+
+![scheduler-3](https://user-images.githubusercontent.com/6098197/108635661-5f8b8580-7435-11eb-9552-3c08767afdf9.png)
+
+Currently there are three scheduled tasks which run:
+
+| Rake Task                                       | When it should be run                    | Purpose                                               |
+| ----------------------------------------------- | ---------------------------------------- | ----------------------------------------------------- |
+| `rake meetingplace_slack_bot:next_event`        | Hourly ~10 minutes before the hour       | Gives a heads up that a new meeting is about to start |
+| `rake meetingplace_slack_bot:todays_events`     | Every morning at 8am UTC (Except Monday) | Tells us in the morning an event will happen that day |
+| `rake meetingplace_slack_bot:this_weeks_events` | Every Monday at 8am UTC                  | Lists all the meetings starting that week             |
+
+You can specify uniquie channel->group pairs by adding it to the end of the task like:
+
+`rake meetingplace_slack_bot:next_event["test-channel","test-group"]`
