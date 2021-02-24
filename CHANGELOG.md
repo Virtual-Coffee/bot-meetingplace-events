@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Update GitHub Workflows to use 'bundler-cache' [\#39](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/39) ([MikeRogers0](https://github.com/MikeRogers0))
 - Experimenting with displaying dates with Relative timezones [\#36](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/36) ([MikeRogers0](https://github.com/MikeRogers0))
 - Switching to standardrb for Ruby Linting [\#35](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/35) ([MikeRogers0](https://github.com/MikeRogers0))
 - Use Heroku over GitHub Actions for Scheduled Events [\#34](https://github.com/Virtual-Coffee/Virtual-Coffee-Bot/pull/34) ([MikeRogers0](https://github.com/MikeRogers0))
