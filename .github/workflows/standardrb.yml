@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  rubocop:
+  standardrb:
     runs-on: ubuntu-latest
 
     steps:
