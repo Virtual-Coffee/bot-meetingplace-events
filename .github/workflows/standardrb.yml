@@ -4,9 +4,10 @@ on:
   push:
     branches-ignore:
       - main
+  workflow_dispatch:
 
 jobs:
-  rubocop:
+  standardrb:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,14 +16,9 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.7
-    - name: Cache gems
-      uses: actions/cache@v2
-      with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-standardrb
+        bundler-cache: true 
     - name: Install gems
       run: |
-        bundle config path vendor/bundle
         gem install standardrb
     - name: Run standard
       run: standardrb
