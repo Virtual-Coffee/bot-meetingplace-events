@@ -10,7 +10,7 @@ module MeetingplaceSlackBot
         [
           "📅 Next event is starting in #{next_event.time_to_start}!",
           "*#{next_event.name}*",
-          next_event.description.to_s,
+          next_event.slack_description,
           "<#{next_event.url}|View Details>"
         ].join("\n\n")
       end

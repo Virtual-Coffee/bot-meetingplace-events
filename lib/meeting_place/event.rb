@@ -1,4 +1,5 @@
 require "dotiw"
+require "nokogiri"
 
 # Represents an event on MeetingPlace
 # Has common methods I wanted to format
@@ -20,6 +21,10 @@ module MeetingPlace
 
     def description
       @data["description"]
+    end
+
+    def slack_description
+      Nokogiri::HTML(description)
     end
 
     def location

@@ -22,4 +22,24 @@ describe MeetingPlace::Info do
     subject { instance.short_description }
     it { is_expected.to eq "An intimate community for all devs, optimized for you" }
   end
+
+  describe "#description" do
+    subject { instance.description }
+    it { is_expected.not_to be_nil }
+  end
+
+  describe "#location" do
+    subject { instance.location }
+    it { is_expected.to eq "Remote" }
+  end
+
+  describe "#timezone" do
+    subject { instance.timezone }
+    it { is_expected.to eq "America/New_York" }
+  end
+
+  describe "#image" do
+    subject { instance.image }
+    it { is_expected.not_to be_nil }
+  end
 end

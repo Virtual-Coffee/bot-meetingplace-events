@@ -19,4 +19,10 @@ describe MeetingPlace::Event do
       end
     end
   end
+
+  describe "#slack_description" do
+    subject { instance.slack_description }
+
+    it { is_expected.not_to include("div") }
+  end
 end

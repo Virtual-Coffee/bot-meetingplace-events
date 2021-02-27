@@ -7,6 +7,7 @@ gem "dotiw"
 gem "rake"
 gem "slack-ruby-bot"
 gem "zeitwerk"
+gem "nokogiri"
 
 group :test do
   gem "rack-test"
