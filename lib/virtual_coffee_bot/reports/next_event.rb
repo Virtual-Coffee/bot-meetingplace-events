@@ -8,7 +8,7 @@ module VirtualCoffeeBot
 
       def text
         [
-          "📅 *Next Event:* #{next_event.name}",
+          "⏰ *Next Event:* #{next_event.name}",
           "Starting in #{next_event.time_to_start} | <#{next_event.url}|View Details>"
         ].join("\n\n")
       end
