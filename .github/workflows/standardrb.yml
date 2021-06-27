@@ -12,13 +12,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Ruby 2.7
+    - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.7
-        bundler-cache: true 
+        bundler-cache: true
     - name: Install gems
       run: |
         gem install standardrb
     - name: Run standard
-      run: standardrb
+      run: bundle exec standardrb

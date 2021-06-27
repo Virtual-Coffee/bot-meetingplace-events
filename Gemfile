@@ -16,3 +16,8 @@ group :test do
   gem "vcr"
   gem "webmock"
 end
+
+group :development do
+  gem "github_changelog_generator", "~> 1.16", require: false
+  gem "standardrb", "~> 1.0", require: false
+end
