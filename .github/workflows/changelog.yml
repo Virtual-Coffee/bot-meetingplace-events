@@ -14,17 +14,12 @@ jobs:
     - uses: actions/checkout@master
       with:
         ref: 'main'
-    - name: Set up Ruby 2.7
+    - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.7
-    - uses: actions/cache@v2
-      with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-changelog
+        bundler-cache: true
     - name: Create local changes
       run: |
-        gem install github_changelog_generator
         github_changelog_generator -u Virtual-Coffee -p Virtual-Coffee-Bot --token ${{ secrets.GITHUB_TOKEN }} --exclude-labels duplicate,question,invalid,wontfix,nodoc
     - name: Commit files
       run: |
