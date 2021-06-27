@@ -20,7 +20,7 @@ jobs:
         bundler-cache: true
     - name: Create local changes
       run: |
-        github_changelog_generator -u Virtual-Coffee -p Virtual-Coffee-Bot --token ${{ secrets.GITHUB_TOKEN }} --exclude-labels duplicate,question,invalid,wontfix,nodoc
+        bundle exec github_changelog_generator -u Virtual-Coffee -p Virtual-Coffee-Bot --token ${{ secrets.GITHUB_TOKEN }} --exclude-labels duplicate,question,invalid,wontfix,nodoc
     - name: Commit files
       run: |
         git config --local user.email "github-actions@example.com"
