@@ -10,6 +10,7 @@
 
 **Merged pull requests:**
 
+- chore: Removing GitHub Actions reference from Readme [\#46](https://github.com/Virtual-Coffee/bot-meetingplace-events/pull/46) ([MikeRogers0](https://github.com/MikeRogers0))
 - fix: Correcting reference to repo in changelog generator [\#45](https://github.com/Virtual-Coffee/bot-meetingplace-events/pull/45) ([MikeRogers0](https://github.com/MikeRogers0))
 - feat: Upgrade to Ruby 3.0.1 \(and upgrade gems\) [\#44](https://github.com/Virtual-Coffee/bot-meetingplace-events/pull/44) ([MikeRogers0](https://github.com/MikeRogers0))
 - Making next event alert use the alarm emoji [\#40](https://github.com/Virtual-Coffee/bot-meetingplace-events/pull/40) ([MikeRogers0](https://github.com/MikeRogers0))
