@@ -1,12 +1,14 @@
-# Virtual Coffee Bot
+# Bot : Meeting Place Events
 
-This friendly bot reports when the next event is.
+This friendly bot reports when the next event is in our Slack.
 
 It pulls the data from the [Meeting Place API](https://meetingplace.io/api/v1/group/virtual-coffee/events.json).
 
 ## Sample Output
 
-![image](https://user-images.githubusercontent.com/325384/97884868-81de8380-1d1e-11eb-9a6f-0a6f9f2d1b7e.png)
+![Slack Message showing this weeks events](https://user-images.githubusercontent.com/325384/123550836-fbefcc80-d734-11eb-9519-ce0642abdd28.png)
+
+![Daily Reminder & Pre Event reminder](https://user-images.githubusercontent.com/325384/123550882-204ba900-d735-11eb-824c-b431cddc9f4d.png)
 
 ```
 📅 *Next Event:* Virtual Coffee - Morning Crowd
@@ -15,7 +17,7 @@ Starting in 10 minutes! <https://meetingplace.io/virtual-coffee/events/3185|View
 
 ## Setting up
 
-The bot runs on a schedule as managed by the GitHub Actions. They require the following [secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets) to be setup:
+The bot runs on a schedule as managed by Heroku Scheduler (We did try GitHub Actions, but they proved unreliable at running on time). It requires the following [secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets) to be setup:
 
 | Secret            | Source                                                      | Purpose                                   |
 | ----------------- | ----------------------------------------------------------- | ----------------------------------------- |
