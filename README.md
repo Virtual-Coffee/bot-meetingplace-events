@@ -1,8 +1,8 @@
-# Bot : Meeting Place Events
+# Bot : MeetingPlace Events
 
 This friendly bot reports when the next event is in our Slack.
 
-It pulls the data from the [Meeting Place API](https://meetingplace.io/api/v1/group/virtual-coffee/events.json).
+It pulls the data from the [MeetingPlace API](https://meetingplace.io/api/v1/group/virtual-coffee/events.json).
 
 ## Sample Output
 
