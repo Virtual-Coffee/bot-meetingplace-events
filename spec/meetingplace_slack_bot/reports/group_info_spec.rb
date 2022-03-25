@@ -8,7 +8,7 @@ describe MeetingplaceSlackBot::Reports::GroupInfo do
   before do
     allow(instance).to receive(:slack_client).and_return(slack_client)
     allow(instance).to receive(:info).and_return(info)
-    info.instance_variable_set("@data", JSON.parse(File.read("spec/fixtures/files/meetingplace.io/info.json")))
+    info.instance_variable_set(:@data, JSON.parse(File.read("spec/fixtures/files/meetingplace.io/info.json")))
   end
 
   describe "#call" do

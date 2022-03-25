@@ -21,10 +21,10 @@ module MeetingplaceSlackBot
       def blocks
         [
           {
-            "type": "section",
-            "text": {
-              "type": "mrkdwn",
-              "text": text
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text: text
             }
           }
         ]

@@ -23,18 +23,18 @@ module MeetingplaceSlackBot
       def attachments
         [
           {
-            "color": "#2fa3c3",
-            "blocks": [
+            color: "#2fa3c3",
+            blocks: [
               {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "*<#{info.url}|#{info.name}>*\n\n#{info.short_description}"
+                type: "section",
+                text: {
+                  type: "mrkdwn",
+                  text: "*<#{info.url}|#{info.name}>*\n\n#{info.short_description}"
                 },
-                "accessory": {
-                  "type": "image",
-                  "image_url": info.image.to_s,
-                  "alt_text": info.name.to_s
+                accessory: {
+                  type: "image",
+                  image_url: info.image.to_s,
+                  alt_text: info.name.to_s
                 }
               }
             ]
