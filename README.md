@@ -146,14 +146,19 @@ Then setup the schedule for your task
 
 ![scheduler-3](https://user-images.githubusercontent.com/6098197/108635661-5f8b8580-7435-11eb-9552-3c08767afdf9.png)
 
-Currently there are three scheduled tasks which run:
+Possible tasks:
 
-| Rake Task                                       | When it should be run                    | Purpose                                               |
-| ----------------------------------------------- | ---------------------------------------- | ----------------------------------------------------- |
-| `rake meetingplace_slack_bot:next_event`        | Hourly ~10 minutes before the hour       | Gives a heads up that a new meeting is about to start |
-| `rake meetingplace_slack_bot:todays_events`     | Every morning at 8am UTC (Except Monday) | Tells us in the morning an event will happen that day |
-| `rake meetingplace_slack_bot:this_weeks_events` | Every Monday at 8am UTC                  | Lists all the meetings starting that week             |
+```bash
+rake meetingplace_slack_bot:event_report[channel,group,hour]  # Send event reminders for group
+rake meetingplace_slack_bot:info[channel,group]               # Gets a description of the group
+rake meetingplace_slack_bot:next_event[channel,group]         # Posts to Slack if an event is starting in the next 15 minutes
+rake meetingplace_slack_bot:send_reports                      # Loop through all chapters in config file and send reports
+rake meetingplace_slack_bot:this_weeks_events[channel,group]  # Posts to Slack the events for this week (Only runs on Monday)
+rake meetingplace_slack_bot:todays_events[channel,group]      # Posts to Slack if an event occouring today (Does not run on Monday)
+```
 
-You can specify uniquie channel->group pairs by adding it to the end of the task like:
+Currently there is one scheduled tasks which runs:
 
-`rake meetingplace_slack_bot:next_event["test-channel","test-group"]`
+| Rake Task                                  | When it should be run              | Purpose                                                   |
+| ------------------------------------------ | ---------------------------------- | --------------------------------------------------------- |
+| `rake meetingplace_slack_bot:send_reports` | Hourly ~10 minutes before the hour | Loop through all chapters in config file and send reports |

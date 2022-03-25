@@ -1,0 +1,47 @@
+[
+    {
+        "slack_channel": "events",
+        "meetingplace_group": "womeninrobotics",
+        "time": 15
+    },
+    {
+        "slack_channel": "local_boston",
+        "meetingplace_group": "women-in-robotics-Boston",
+        "time": 12
+    },
+    {
+        "slack_channel": "local_sf_bay_area",
+        "meetingplace_group": "women-in-robotics-bay-area",
+        "time": 15
+    },
+    {
+        "slack_channel": "local_boulder_denver",
+        "meetingplace_group": "women-in-robotics-boulder-denver",
+        "time": 14
+    },
+    {
+        "slack_channel": "local_new_york",
+        "meetingplace_group": "women-in-robotics-new-york",
+        "time": 12
+    },
+    {
+        "slack_channel": "local_pittsburgh",
+        "meetingplace_group": "women-in-robotics-pittsburgh",
+        "time": 12
+    },
+    {
+        "slack_channel": "local_texas",
+        "meetingplace_group": "women-in-robotics-san-antonio",
+        "time": 13
+    },
+    {
+        "slack_channel": "local_australia",
+        "meetingplace_group": "womeninroboticsmelbourne",
+        "time": 21
+    },
+    {
+        "slack_channel": "local_india",
+        "meetingplace_group": "women-in-robotics-delhi",
+        "time": 2
+    }
+]
