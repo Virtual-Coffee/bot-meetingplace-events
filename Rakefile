@@ -37,6 +37,33 @@ namespace :meetingplace_slack_bot do
     end
   end
 
+  # Call this every hour to update the status of the events
+  # rake meetingplace_slack_bot:event_report["test-meetingplace","women-in-robotics", 8]
+  desc "Set up event reminders for group"
+  task :event_report, [:channel, :group, :hour] => :environment do |task, args|
+    if !ENV["SLACK_API_TOKEN"]
+      puts "Missing required ENV: SLACK_API_TOKEN"
+      return
+    end
+    puts "yep"
+    # Query the next event each call
+    MeetingplaceSlackBot::Reports::NextEvent.new.call(args[:channel], args[:group])
+    # If the time is [time] am and it's monday, send this weeks events to slack
+    puts Time.now.utc.hour
+    if Time.now.utc.hour == args[:hour].to_i
+      puts "Running daily tasks"
+      if Time.now.monday?
+        # Give the weekly report on mondays
+        puts "Running week events"
+        MeetingplaceSlackBot::Reports::ThisWeeksEvents.new.call(args[:channel], args[:group])
+      else
+        # Show events happening today.
+        puts "Running todays events"
+        MeetingplaceSlackBot::Reports::TodaysEvents.new.call(args[:channel], args[:group])
+      end
+    end
+  end
+
   desc "Gets a description of the config"
   task :info, [:channel, :group] => :environment do |task, args|
     if !ENV["SLACK_API_TOKEN"]
