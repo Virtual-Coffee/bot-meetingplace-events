@@ -1,3 +1,12 @@
+# Archived
+
+Hey there. Virtual Coffee isn't using this package any more, so we've archived it. Please feel free to fork and use on your own!
+
+We miss you, Mike. ❤️
+
+
+---
+
 # Bot : MeetingPlace Events
 
 This friendly bot reports when the next event is in our Slack.
