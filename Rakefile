@@ -45,20 +45,19 @@ namespace :meetingplace_slack_bot do
       puts "Missing required ENV: SLACK_API_TOKEN"
       return
     end
-    puts "yep"
+    puts "Runing event_report for #{args[:group]} on #{args[:channel]}"
     # Query the next event each call
     MeetingplaceSlackBot::Reports::NextEvent.new.call(args[:channel], args[:group])
     # If the time is [time] am and it's monday, send this weeks events to slack
-    puts Time.now.utc.hour
     if Time.now.utc.hour == args[:hour].to_i
-      puts "Running daily tasks"
+      puts "Running event_report daily tasks for #{args[:group]} on #{args[:channel]} on #{args[:hour]}"
       if Time.now.monday?
         # Give the weekly report on mondays
-        puts "Running week events"
+        puts "Running event_report ThisWeeksEvents for #{args[:group]} on #{args[:channel]}"
         MeetingplaceSlackBot::Reports::ThisWeeksEvents.new.call(args[:channel], args[:group])
       else
         # Show events happening today.
-        puts "Running todays events"
+        puts "Running event_report TodaysEvents for #{args[:group]} on #{args[:channel]}"
         MeetingplaceSlackBot::Reports::TodaysEvents.new.call(args[:channel], args[:group])
       end
     end
